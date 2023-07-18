@@ -1,0 +1,10 @@
+update YYSG_YB set BQM = SUBSTRING(BQM,0,31)+
+ (select yysg_dbpc.GZX_BH from yysg_dbpc where yysg_dbpc.pc_id=YYSG_YB.pc_id)+ SUBSTRING(BQM,33,33)
+ where BQM like '%-%'
+
+
+
+update YYSG_YBBF set BQM = SUBSTRING(BQM,0,31)+
+ (select yysg_dbpc.GZX_BH from yysg_dbpc where yysg_dbpc.pc_id=YYSG_YBBF.pc_id)+ SUBSTRING(BQM,33,33)
+ where BQM like '%-%'
+
